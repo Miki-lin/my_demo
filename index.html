@@ -1,20 +1,137 @@
-<html>
-<head lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>html5</title>
-    <style type="text/css">
-    .theme{
-      display: block;
-      width: 200px;
-      font-size: 30px;
-      margin: 100px auto;
-    }
-    </style>
-</head>
-<body>
-<div class="theme">
-  Hello, world.
-</div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <title>学生校园通行码领取</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .box{
+            text-align: center;
+        }
+        .img img{
+            width: 100%;
+        }
+        p{
+            padding: 0;
+            margin: 0;
+            font-weight: 500;
+        }
+        .wechat img{
+            width: 50%;
+        }
 
+    </style>
+    <script type="text/javascript">window.onload = function() {
+    var lastTouchEnd = 0;
+    document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    });
+    document.addEventListener('touchend', function(event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+    document.addEventListener('gesturestart', function(event) {
+        event.preventDefault();
+    });
+    document.addEventListener('dblclick', function (event) {
+        event.preventDefault();
+    })
+}
+
+</script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img" style="width: 100%;">
+            <a href="https://s1.ax1x.com/2020/06/25/N0y7Yq.jpg" style="width:100%;">
+                <img src="https://s1.ax1x.com/2020/06/25/N0WSWn.png" alt="a">
+                <img src="https://s1.ax1x.com/2020/06/25/NBSyrT.jpg" alt="a">
+            </a>
+            <!-- <a href="https://www.baidu.com/" style="width: 100%;">
+                <img src="https://s1.ax1x.com/2020/06/23/NU07Xq.jpg" alt="a">
+                <img src="https://s1.ax1x.com/2020/06/25/N0WSWn.png" alt="N0WSWn.png" border="0" />
+            </a> -->
+        </div>
+
+        <!-- <div style="font-size: 30px; width:87%; color:aliceblue; text-align:right; background-color:darkorchid;">
+            <span>
+                校园防疫  人人有责
+            </span>
+            <p style="font-size: 16px;">
+                <span style="text-align: right;">
+                    浙江工业大学宣
+                </span>
+            </p>
+            <span style="width: 5%; background-color: aliceblue;">
+                
+            </span>
+        </div> -->
+
+        <div style="padding:6px;text-indent: 0.35em;">
+            <span style="font-size: 13px;">
+                Everyone is responsible for epidemic prevention on campus
+            </span>
+        </div>
+        <div style="padding: 10px;">
+            <p style="margin-bottom: 10px;">
+                <span style="font-size: 19px;">
+                    罗惠珍&nbsp;&nbsp;
+                </span>
+                <span style="color:darkgreen">
+                		<span style="font-size:19px;">
+                			校园通行码
+                		</span>
+                </span>
+                <span style="color:darkgreen">
+                    <span style="font-size:12px;">
+                        Campus Pass Code
+                    </span>
+                </span>
+            </p>
+            <p style="margin-bottom: 2px; padding: 4px;">
+                <span style="font-size: 19px;">
+                    信息工程学院
+                    <p style="font-size: 18px; font-weight: 400;">
+                        330106199510253317
+                    </p>
+                </span>
+            </p>
+            <p style="margin-top: 10px;">
+                <span style="font-size: 12px;">
+                   <span style="color:gray">生成时间 Generation time:</span>
+                    <p id="time" style="color:black;margin-top: 8px; font-size: 12px;">
+                        2020-07-15 00:00:00
+                    </p>
+                </span>
+            </p>
+            <p style="margin-top: 10px;">
+                <span style="font-size: 12px;">
+                   <span style="color:gray">到期时间 Expire Time:</span>
+                    <p id="time" style="color:black;margin-top: 8px; font-size: 12px;">
+                        2020-07-15 23:59:59
+                    </p>
+                </span>
+            </p>
+            <div class="wechat" style="padding: 12px;">
+                <img src="data:image/png;base64,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" alt="a">
+            </div>
+            <div class="foot" style="text-indent: 1.5em; font-size: 12px; text-align: left; padding: 12px;">
+                <!-- <img style="width: 100%;" src="https://user.qzone.qq.com/1060139663" alt="a"> -->
+                <p>
+                    凭此码可在学校朝晖校区、屏峰校区、莫干山校区范围内配合有效证件通行，请主动出示，配合检查。
+                </p>
+                <p style="font-family:initial; font-weight:400; font-size: 12px;">
+                    This code can be used to pass with valid documents in the Zhaohui campus, Pingfen campus and Moganshan campus. Please present it actively and cooperate with the inspection.
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
